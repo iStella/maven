@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>com.patchouli.common</groupId>
+  <artifactId>common</artifactId>
+  <versioning>
+    <release>0.0.0-Snapshot</release>
+    <versions>
+      <version>0.0.0-Snapshot</version>
+    </versions>
+    <lastUpdated>20200320055147</lastUpdated>
+  </versioning>
+</metadata>
