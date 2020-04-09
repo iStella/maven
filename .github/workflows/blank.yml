@@ -54,6 +54,7 @@ jobs:
             Changes in this Release
               - Camera2
               - Tensorflow
+            test has tag  
           # `true`创建草稿（未发布）版本,`false`创建一个已发布的。默认:`false`
           draft: false # optional
           # `true`将发行版标识为预发行版。`false`将发行版标识为完整发行版。默认: `false`
