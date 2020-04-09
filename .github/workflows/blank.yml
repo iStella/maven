@@ -1,0 +1,64 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+
+    # Runs a single command using the runners shell
+#     - name: Run a one-line script
+#       run: echo Hello, world!
+
+    # Runs a set of commands using the runners shell
+#     - name: Run a multi-line script
+#       run: |
+#         echo Add other actions to build,
+#         echo test, and deploy your project.
+
+    - name: Create a Release
+      uses: actions/create-release@v1
+      with:
+        # The name of the tag. This should come from the webhook payload, 
+        # `github.GITHUB_REF` when a user pushes a new tag
+        # 此版本的标签名称
+        tag_name: 0.0.0-Snapshot # ${{ github.ref }}
+        # 版本名称。例如，`Release v1.0.1`
+        release_name: Release 0.0.0-Snapshot
+        # 描述发布内容的文字。
+        body: | # optional
+          Changes in this Release
+            - Camera2
+            - Tensorflow
+        # `true`创建草稿（未发布）版本,`false`创建一个已发布的。 默认:`false`
+        draft: false # optional
+        # `true`将发行版标识为预发行版。`false`将发行版标识为完整发行版。默认: `false`
+        prerelease: true # optional
+
+#     - name: Upload a Release Asset
+#       uses: actions/upload-release-asset@v1.0.2
+#       with:
+#         # The URL for uploading assets to the release
+#         upload_url: 
+#         # The path to the asset you want to upload
+#         asset_path: 
+#         # The name of the asset you want to upload
+#         asset_name: 
+#         # The content-type of the asset you want to upload. See the supported Media Types here: https://www.iana.org/assignments/media-types/media-types.xhtml for more information
+#         asset_content_type: 
