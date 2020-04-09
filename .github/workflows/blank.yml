@@ -66,7 +66,7 @@ jobs:
           # `true`创建草稿（未发布）版本,`false`创建一个已发布的。默认:`false`
           draft: false # optional
           # `true`将发行版标识为预发行版。`false`将发行版标识为完整发行版。默认: `false`
-          prerelease: true # optional
+          prerelease: false # optional
 
 #     - name: Upload a Release Asset
 #       uses: actions/upload-release-asset@v1.0.2
