@@ -37,6 +37,14 @@ jobs:
 #         echo Add other actions to build,
 #         echo test, and deploy your project.
 
+      - name: Delete latest release
+        uses: ame-yu/action-delete-latest-release@v2
+        with:
+          # Token for the repo. Can be passed in using $\{{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # Repository name. Default or empty value represents current github repository (${GITHUB_REPOSITORY})
+#           repository: # optional, default is 
+
       - name: Create a Release
         uses: actions/create-release@v1
         env:
