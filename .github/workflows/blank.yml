@@ -32,6 +32,9 @@ jobs:
 #         echo Add other actions to build,
 #         echo test, and deploy your project.
 
+    - name: Get Permission
+      run: chmod +x gradlew
+
     - name: Create a Release
       uses: actions/create-release@v1
       env:
